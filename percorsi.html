@@ -4,24 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Percorsi - Percorsi ODM</title>
+
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Sfondo sfocato */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
       background-image: url('Ortona_2.jpeg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
+      filter: blur(4px);
+      transform: scale(1.05);
+      z-index: -1;
     }
 
-    @media (max-width: 768px) {
-      body {
-        background-attachment: scroll;
-      }
+    /* Pulsante Home */
+    .home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
     }
-  </style>
-</head>
-<body>
-</body>
-</html>
+
+    .home-btn img {
+      width: 90px;
+      height: auto;
+      display: block;
+      transition: transform 0.
