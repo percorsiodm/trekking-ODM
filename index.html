@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Georgia, "Times New Roman", serif;
       background-color: #f4f4f4;
       color: #222;
     }
@@ -52,6 +52,7 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
@@ -69,31 +70,24 @@
     .section h2 {
       color: #2e7d32;
       margin-top: 0;
+      margin-bottom: 25px;
+      text-align: center;
+      font-size: 2rem;
     }
 
     .section p {
-      line-height: 1.6;
+      line-height: 1.8;
+      font-size: 1.08rem;
+      margin-bottom: 18px;
     }
 
-    .percorsi {
-      margin-top: 30px;
+    .storia {
+      margin-top: 20px;
+      text-align: left;
     }
 
-    .card {
-      background: #f9f9f9;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-left: 5px solid #2e7d32;
-    }
-
-    .card h3 {
-      margin-top: 0;
+    .storia strong {
       color: #2e7d32;
-    }
-
-    .card p {
-      margin-bottom: 0;
     }
 
     @media (max-width: 768px) {
@@ -106,6 +100,14 @@
       }
 
       .overlay p {
+        font-size: 1rem;
+      }
+
+      .section h2 {
+        font-size: 1.6rem;
+      }
+
+      .section p {
         font-size: 1rem;
       }
     }
@@ -121,23 +123,35 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="percorsi">
     <h2>Benvenuto su Percorsi ODM</h2>
-    <p>
-      Inquadra il QR code, esplora i percorsi disponibili e consulta i tracciati direttamente dal tuo telefono.
-      Qui troverai itinerari, informazioni utili e in futuro anche i file GPX per seguire ogni cammino.
-    </p>
 
-    <div class="percorsi" id="percorsi">
-      <div class="card">
-        <h3>Percorsi in arrivo</h3>
-        <p>I primi itinerari saranno disponibili a breve.</p>
-      </div>
+    <div class="storia">
+      <p>
+        Ortona dei Marsi e' circondata da cime appenniniche come il Monte Parasano, il Monte Argatone e il Monte Terratta, inserite nel contesto della Valle del Giovenco e del Parco Nazionale d'Abruzzo, Lazio e Molise.
+      </p>
+
+      <p>
+        <strong>Rilievi principali</strong><br>
+        Monte Parasano: sorge subito a ridosso del borgo a circa 1.450 metri, dominando l'abitato.<br>
+        Monte Argatone e Monte Terratta: situati a sud del territorio comunale, superano i 2.000 metri di quota.<br>
+        Montagna Grande: catena montuosa che delimita la valle verso Pescasseroli.<br>
+        Monte Pietra Gentile: situato nei pressi di Bisegna, tocca i 1.985 metri ed e' la zona d'origine del fiume Giovenco.
+      </p>
+
+      <p>
+        <strong>Caratteristiche del territorio</strong><br>
+        Altitudine del paese: circa 1.003 metri s.l.m. nella valle.<br>
+        Altimetria circostante: i rilievi minori superano i 1.700 metri, mentre le vette maggiori a sud arrivano oltre i 2.000 metri.<br>
+        Idrografia: il territorio e' solcato dal fiume Giovenco, che nasce dalle vicine pendici montane.
+      </p>
     </div>
   </section>
 
 </body>
 </html>
+
+
 
 
 
