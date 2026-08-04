@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il Cammino degli Dei - Percorsi ODM</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background-image: linear-gradient(rgba(20,30,15,0.45), rgba(20,30,15,0.6)), url('Viadeglidei.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: 'Merriweather', serif;
+        color: #f5f2e8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px 80px;
+    }
+    .home-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+    .home-btn img {
+        width: 100px;
+        height: auto;
+        display: block;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    .home-btn img:hover { transform: scale(1.05); }
+
+    h1 {
+        font-family: 'Caveat', cursive;
+        font-size: 4rem;
+        margin: 60px 0 10px;
+        text-align: center;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+    .subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        text-align: center;
+        opacity: 0.9;
+        max-width: 600px;
+    }
+    .content-box {
+        background: rgba(255,255,255,0.9);
+        color: #2c2416;
+        border-radius: 16px;
+        max-width: 750px;
+        width: 100%;
+        padding: 35px 40px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        line-height: 1.7;
+    }
+    .content-box p { margin: 0 0 16px; }
+    .content-box h2 {
+        font-family: 'Caveat', cursive;
+        font-size: 2.2rem;
+        color: #4a5c2f;
+        margin: 30px 0 10px;
+    }
+    .content-box ul { padding-left: 20px; }
+    .content-box li { margin-bottom: 12px; }
+    .content-box a { color: #4a5c2f; }
+
+    .actions {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .action-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #4a5c2f;
+        color: #fff;
+        padding: 14px 26px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-family: 'Merriweather', serif;
+        font-weight: 700;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+        transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .action-btn:hover {
+        transform: translateY(-3px);
+        background: #5d7440;
+    }
+    .gallery-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #fff;
+    }
+    .gallery-btn img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 3px solid #fff;
+        transition: transform 0.2s ease;
+    }
+    .gallery-btn:hover img { transform: scale(1.05); }
+
+    @media (max-width: 768px) {
+        body { background-attachment: scroll; padding: 20px 15px 60px; }
+        h1 { font-size: 2.8rem; margin-top: 40px; }
+        .content-box { padding: 25px 22px; }
+        .home-btn { top: 10px; right: 10px; }
+        .home-btn img { width: 70px; }
+    }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="home-btn">
+    <img src="Torna_Home.png" alt="Torna alla Home">
+</a>
+
+<h1>Benvenuto nel Cammino degli Dei</h1>
+<p class="subtitle">130 km di natura, storia e silenzio, tra Bologna e Firenze</p>
+
+<div class="content-box">
+    <p>La Via degli Dei è un famoso cammino di circa 130 km che unisce <a href="https://www.viadeglidei.it/" target="_blank" rel="noopener">Bologna a Firenze</a> attraverso l'Appennino, prendendo il nome <a href="https://camminiditalia.org/perche-si-chiama-via-degli-dei/" target="_blank" rel="noopener">da monti dedicati a divinità pagane</a> (come Monte Adone e Monte Venere).</p>
+
+    <h2>Le Origini Antiche</h2>
+    <ul>
+        <li><strong>Gli Etruschi:</strong> già nel V-IV secolo a.C., le popolazioni etrusche usavano questi crinali montani per collegare Padania ed Etruria per motivi commerciali.</li>
+        <li><strong>La Flaminia Militare:</strong> nel 187 a.C., il console romano Caio Flaminio fece costruire una strada militare lastricata in pietra (basolato) per unire Roma a Bononia (Bologna) in modo rapido. Tratti di questo antico selciato romano affiorano ancora oggi lungo il percorso.</li>
+    </ul>
+
+    <h2>La Riscoperta Moderna</h2>
+    <ul>
+        <li><strong>Anni '80-'90:</strong> il tracciato è stato riscoperto e rilanciato da un gruppo di escursionisti bolognesi guidati da Domenico Manaresi (detto "Mingàn").</li>
+        <li><strong>Il nome:</strong> ripresero la denominazione popolare della strada provinciale che attraversava i monti sacri agli dei romani, trasformandola in uno dei primi e più amati percorsi di trekking storico-naturalistico d'Italia.</li>
+    </ul>
+</div>
+
+<div class="actions">
+    <a href="la-via-degli-dei.gpx" download class="action-btn">⬇ Scarica traccia GPX</a>
+    <a href="gallery-viadeglidei.html" class="gallery-btn">
+        <img src="Cartellonisticadei.jpg" alt="Gallery">
+        <span>Gallery</span>
+    </a>
+</div>
+
+</body>
+</html>
