@@ -30,6 +30,23 @@
         .home-btn img:hover {
             transform: scale(1.05);
         }
+        .via-dei-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        .via-dei-btn img {
+            width: 100px;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border-radius: 8px;
+        }
+        .via-dei-btn img:hover {
+            transform: scale(1.05);
+        }
         @media (max-width: 768px) {
             body {
                 background-attachment: scroll;
@@ -41,12 +58,22 @@
             .home-btn img {
                 width: 70px;
             }
+            .via-dei-btn {
+                top: 10px;
+                left: 10px;
+            }
+            .via-dei-btn img {
+                width: 70px;
+            }
         }
     </style>
 </head>
 <body>
     <a href="index.html" class="home-btn">
         <img src="Torna_Home.png" alt="Torna alla Home">
+    </a>
+    <a href="viadeglidei.html" class="via-dei-btn">
+        <img src="Via%20degli%20dei%20Dei.png" alt="Via degli Dei">
     </a>
 </body>
 </html>
