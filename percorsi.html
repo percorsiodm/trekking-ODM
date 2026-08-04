@@ -6,33 +6,16 @@
   <title>Percorsi - Percorsi ODM</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Sfondo sfocato */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
       background-image: url('Ortona_2.jpeg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      filter: blur(4px);
-      transform: scale(1.05);
-      z-index: -1;
+      background-attachment: fixed;
     }
 
-    /* Pulsante Home */
     .home-btn {
       position: fixed;
       top: 20px;
@@ -44,4 +27,36 @@
       width: 90px;
       height: auto;
       display: block;
-      transition: transform 0.
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .home-btn img:hover {
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      .home-btn {
+        top: 15px;
+        right: 15px;
+      }
+
+      .home-btn img {
+        width: 65px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="home-btn">
+    Torna_Home.png
+  </a>
+
+</body>
+</html>
