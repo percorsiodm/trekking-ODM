@@ -4,9 +4,122 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Percorsi ODM</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background-image: url('ortona.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.45);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      width: 100%;
+    }
+
+    .overlay h1 {
+      font-size: 2rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .overlay p {
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 22px;
+      background-color: #2e7d32;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #256628;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: white;
+    }
+
+    .section h2 {
+      color: #2e7d32;
+      margin-top: 0;
+    }
+
+    .section p {
+      line-height: 1.6;
+    }
+
+    .percorsi {
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 5px solid #2e7d32;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #2e7d32;
+    }
+
+    .card p {
+      margin-bottom: 0;
+    }
+  </style>
 </head>
 <body>
-  <h1>Percorsi ODM</h1>
-  <p>Benvenuto. Qui troverai i percorsi consultabili da smartphone tramite QR code.</p>
+
+  <section class="hero">
+    <div class="overlay">
+      <h1>In cammino verso le meraviglie di Ortona dei Marsi e dintorni</h1>
+      <p>Scopri sentieri, natura e paesaggi del territorio direttamente dal tuo smartphone.</p>
+      <a class="btn" href="#percorsi">Scopri i percorsi</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Benvenuto su Percorsi ODM</h2>
+    <p>
+      Inquadra il QR code, esplora i percorsi disponibili e consulta i tracciati direttamente dal tuo telefono.
+      Qui troverai itinerari, informazioni utili e in futuro anche i file GPX per seguire ogni cammino.
+    </p>
+
+    <div class="percorsi" id="percorsi">
+      <div class="card">
+        <h3>Percorsi in arrivo</h3>
+        <p>I primi itinerari saranno disponibili a breve.</p>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
+
