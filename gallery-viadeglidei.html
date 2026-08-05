@@ -28,6 +28,11 @@
         object-fit: cover;
         border-radius: 12px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        cursor: zoom-in;
+        transition: transform 0.2s ease;
+    }
+    .gallery-grid img:hover {
+        transform: scale(1.02);
     }
     .back-btn {
         display: inline-block;
@@ -38,14 +43,65 @@
         padding: 12px 24px;
         border-radius: 30px;
     }
+
+    /* Lightbox */
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+        cursor: zoom-out;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .lightbox.active {
+        display: flex;
+    }
+    .lightbox img {
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 8px;
+        box-shadow: 0 10px 50px rgba(0,0,0,0.7);
+    }
+    .lightbox-close {
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        font-size: 2.5rem;
+        color: #fff;
+        cursor: pointer;
+        z-index: 2001;
+        line-height: 1;
+    }
 </style>
 </head>
 <body>
     <h1>Gallery - Via degli Dei</h1>
     <div class="gallery-grid">
-        <img src="Viadeglidei.jpg" alt="Via degli Dei">
-        <img src="Via%20degli%20dei%20Dei.png" alt="Via degli Dei">
+        <img src="Viadeglidei.jpg" alt="Via degli Dei" onclick="openLightbox(this.src)">
+        <img src="Via%20degli%20dei%20Dei.png" alt="Via degli Dei" onclick="openLightbox(this.src)">
     </div>
     <a href="viadeglidei.html" class="back-btn">← Torna al Cammino degli Dei</a>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Immagine ingrandita">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+    </script>
 </body>
 </html>
