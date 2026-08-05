@@ -86,32 +86,14 @@
         align-items: flex-start;
         z-index: 1000;
     }
-    .gallery-btn {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-        text-decoration: none;
-        color: #fff;
-    }
-    .gallery-btn img {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        border-radius: 10px;
-        border: 2px solid #fff;
-        transition: transform 0.2s ease;
-    }
-    .gallery-btn:hover img { transform: scale(1.05); }
-
-    .actions .gpx-btn img {
+    .actions img {
         width: 100px;
         height: auto;
         display: block;
         cursor: pointer;
         transition: transform 0.2s ease;
     }
-    .actions .gpx-btn img:hover { transform: scale(1.05); }
+    .actions img:hover { transform: scale(1.05); }
 
     @media (max-width: 768px) {
         body { background-attachment: scroll; padding: 20px 15px 60px; }
@@ -124,11 +106,7 @@
             left: 10px;
             gap: 8px;
         }
-        .gallery-btn img {
-            width: 40px;
-            height: 40px;
-        }
-        .actions .gpx-btn img {
+        .actions img {
             width: 70px;
         }
     }
@@ -146,11 +124,10 @@
 </div>
 
 <div class="actions">
-    <a href="gallery-viadeglidei.html" class="gallery-btn">
-        <img src="Cartellonisticadei.jpg" alt="Gallery">
-        <span>Gallery</span>
+    <a href="gallery-viadeglidei.html">
+        <img src="Gallery.png" alt="Gallery">
     </a>
-    <a href="la-via-degli-dei.gpx" download class="gpx-btn">
+    <a href="la-via-degli-dei.gpx" download>
         <img src="Scarica_GPX.png" alt="Scarica traccia GPX">
     </a>
 </div>
