@@ -33,17 +33,22 @@
         .home-btn img:hover {
             transform: scale(1.05);
         }
-        .via-dei-btn {
+        .percorsi-btns {
             position: fixed;
             top: 20px;
             left: 20px;
             z-index: 1000;
             display: flex;
             flex-direction: column;
+            gap: 15px;
+        }
+        .percorso-btn {
+            display: flex;
+            flex-direction: column;
             align-items: center;
             text-decoration: none;
         }
-        .via-dei-btn img {
+        .percorso-btn img {
             width: 100px;
             height: auto;
             display: block;
@@ -51,10 +56,10 @@
             transition: transform 0.2s ease;
             border-radius: 8px;
         }
-        .via-dei-btn img:hover {
+        .percorso-btn img:hover {
             transform: scale(1.05);
         }
-        .via-dei-btn span {
+        .percorso-btn span {
             margin-top: 6px;
             font-family: 'Georgia', 'Times New Roman', serif;
             font-style: italic;
@@ -94,14 +99,15 @@
             .home-btn img {
                 width: 70px;
             }
-            .via-dei-btn {
+            .percorsi-btns {
                 top: 10px;
                 left: 10px;
+                gap: 10px;
             }
-            .via-dei-btn img {
+            .percorso-btn img {
                 width: 70px;
             }
-            .via-dei-btn span {
+            .percorso-btn span {
                 font-size: 0.8rem;
             }
             .intro-text p {
@@ -115,10 +121,16 @@
     <a href="index.html" class="home-btn">
         <img src="Trekking.jpg" alt="Torna alla Home">
     </a>
-    <a href="viadeglidei.html" class="via-dei-btn">
-        <img src="Via%20degli%20dei%20Dei.png" alt="Via degli Dei">
-        <span>Via degli Dei</span>
-    </a>
+    <div class="percorsi-btns">
+        <a href="viadeglidei.html" class="percorso-btn">
+            <img src="Via%20degli%20dei%20Dei.png" alt="Via degli Dei">
+            <span>Via degli Dei</span>
+        </a>
+        <a href="camminopitonio.html" class="percorso-btn">
+            <img src="Fiume.png" alt="Cammino Pitonio">
+            <span>Cammino Pitonio</span>
+        </a>
+    </div>
     <div class="intro-text">
         <p>Qui ogni cammino ha una storia da raccontare.</p>
     </div>
