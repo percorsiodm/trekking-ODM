@@ -13,6 +13,9 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .home-btn {
             position: fixed;
@@ -63,6 +66,23 @@
             border-radius: 12px;
             letter-spacing: 0.5px;
         }
+        .intro-text {
+            text-align: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .intro-text p {
+            display: inline-block;
+            background: rgba(0,0,0,0.45);
+            color: #fff;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            padding: 16px 28px;
+            border-radius: 10px;
+            margin: 0;
+            line-height: 1.5;
+        }
         @media (max-width: 768px) {
             body {
                 background-attachment: scroll;
@@ -84,6 +104,10 @@
             .via-dei-btn span {
                 font-size: 0.8rem;
             }
+            .intro-text p {
+                font-size: 1.05rem;
+                padding: 12px 20px;
+            }
         }
     </style>
 </head>
@@ -95,5 +119,8 @@
         <img src="Via%20degli%20dei%20Dei.png" alt="Via degli Dei">
         <span>Via degli Dei</span>
     </a>
+    <div class="intro-text">
+        <p>Qui ogni cammino ha una storia da raccontare.</p>
+    </div>
 </body>
 </html>
