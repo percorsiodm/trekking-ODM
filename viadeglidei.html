@@ -86,25 +86,6 @@
         align-items: flex-start;
         z-index: 1000;
     }
-    .action-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: #4a5c2f;
-        color: #fff;
-        padding: 8px 16px;
-        border-radius: 20px;
-        text-decoration: none;
-        font-family: 'Merriweather', serif;
-        font-weight: 700;
-        font-size: 0.85rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-        transition: transform 0.2s ease, background 0.2s ease;
-    }
-    .action-btn:hover {
-        transform: translateY(-3px);
-        background: #5d7440;
-    }
     .gallery-btn {
         display: flex;
         flex-direction: row;
@@ -123,6 +104,15 @@
     }
     .gallery-btn:hover img { transform: scale(1.05); }
 
+    .actions .gpx-btn img {
+        width: 100px;
+        height: auto;
+        display: block;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    .actions .gpx-btn img:hover { transform: scale(1.05); }
+
     @media (max-width: 768px) {
         body { background-attachment: scroll; padding: 20px 15px 60px; }
         h1 { font-size: 2.8rem; margin-top: 40px; }
@@ -134,13 +124,12 @@
             left: 10px;
             gap: 8px;
         }
-        .action-btn {
-            padding: 6px 12px;
-            font-size: 0.75rem;
-        }
         .gallery-btn img {
             width: 40px;
             height: 40px;
+        }
+        .actions .gpx-btn img {
+            width: 70px;
         }
     }
 </style>
@@ -157,10 +146,12 @@
 </div>
 
 <div class="actions">
-    <a href="la-via-degli-dei.gpx" download class="action-btn">⬇ Scarica traccia GPX</a>
     <a href="gallery-viadeglidei.html" class="gallery-btn">
         <img src="Cartellonisticadei.jpg" alt="Gallery">
         <span>Gallery</span>
+    </a>
+    <a href="la-via-degli-dei.gpx" download class="gpx-btn">
+        <img src="Scarica_GPX.png" alt="Scarica traccia GPX">
     </a>
 </div>
 
