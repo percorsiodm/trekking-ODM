@@ -24,8 +24,8 @@
     .overlay {
       background: rgba(0, 0, 0, 0.45);
       color: white;
-      text-align: center;
-      padding: 30px 20px;
+      text-align: left;
+      padding: 30px 40px;
       width: 100%;
       box-sizing: border-box;
     }
@@ -33,26 +33,29 @@
       font-size: 2rem;
       line-height: 1.4;
       margin: 0;
+      max-width: 700px;
     }
     .overlay p {
       margin-top: 15px;
       font-size: 1.1rem;
+      max-width: 600px;
     }
     .btn-group {
       display: flex;
-      justify-content: center;
-      gap: 15px;
+      justify-content: flex-start;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-top: 25px;
+      margin-top: 20px;
     }
     .btn {
       display: inline-block;
-      padding: 12px 22px;
+      padding: 8px 16px;
       background-color: #2e7d32;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: bold;
+      font-size: 0.85rem;
       transition: background-color 0.3s ease;
     }
     .btn:hover {
@@ -88,11 +91,18 @@
       .hero {
         height: 80vh;
       }
+      .overlay {
+        padding: 25px 20px;
+      }
       .overlay h1 {
         font-size: 1.6rem;
       }
       .overlay p {
         font-size: 1rem;
+      }
+      .btn {
+        font-size: 0.8rem;
+        padding: 7px 14px;
       }
       .section h2 {
         font-size: 1.6rem;
