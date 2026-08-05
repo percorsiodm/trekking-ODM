@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il Cammino Pitonio - Percorsi ODM</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background-image: linear-gradient(rgba(20,30,15,0.45), rgba(20,30,15,0.6)), url('Pitonio.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: 'Merriweather', serif;
+        color: #f5f2e8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px 80px;
+    }
+    .top-right {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+    }
+    .top-right img {
+        width: 100px;
+        height: auto;
+        display: block;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    .top-right img:hover { transform: scale(1.05); }
+
+    h1 {
+        font-family: 'Caveat', cursive;
+        font-size: 4rem;
+        margin: 60px 0 10px;
+        text-align: center;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+    .subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        text-align: center;
+        opacity: 0.9;
+        max-width: 600px;
+    }
+    .content-box {
+        background: rgba(255,255,255,0.9);
+        color: #2c2416;
+        border-radius: 16px;
+        max-width: 750px;
+        width: 100%;
+        padding: 35px 40px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        line-height: 1.7;
+    }
+    .content-box p { margin: 0 0 16px; }
+    .content-box h2 {
+        font-family: 'Caveat', cursive;
+        font-size: 2.2rem;
+        color: #4a5c2f;
+        margin: 30px 0 10px;
+    }
+    .content-box ul { padding-left: 20px; }
+    .content-box li { margin-bottom: 12px; }
+    .content-box a { color: #4a5c2f; }
+
+    .actions {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        z-index: 1000;
+    }
+    .actions img {
+        width: 100px;
+        height: auto;
+        display: block;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    .actions img:hover { transform: scale(1.05); }
+
+    @media (max-width: 768px) {
+        body { background-attachment: scroll; padding: 20px 15px 60px; }
+        h1 { font-size: 2.8rem; margin-top: 40px; }
+        .content-box { padding: 25px 22px; }
+        .top-right { top: 10px; right: 10px; gap: 8px; }
+        .top-right img { width: 70px; }
+        .actions {
+            top: 10px;
+            left: 10px;
+            gap: 8px;
+        }
+        .actions img {
+            width: 70px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="top-right">
+    <a href="index.html">
+        <img src="Trekking.jpg" alt="Torna alla Home">
+    </a>
+    <a href="percorsi.html">
+        <img src="Torna_Percorsi.png" alt="Torna ai Percorsi">
+    </a>
+</div>
+
+<div class="actions">
+    <a href="galleriacamminodipitonio.html">
+        <img src="Pitonio.jpg" alt="Gallery">
+    </a>
+</div>
+
+<h1>Benvenuto nel Cammino Pitonio</h1>
+<p class="subtitle">Tra i sentieri della Valle del Giovenco, nel cuore della Marsica</p>
+
+<div class="content-box">
+    <p>Il Cammino Pitonio è un percorso escursionistico nella Valle del Giovenco, in Abruzzo. Segue le sponde del fiume Giovenco, anticamente chiamato Pitonio, ed è nato per valorizzare la storia e la natura incontaminata della Marsica.</p>
+
+    <h2>Il Percorso e le Caratteristiche</h2>
+    <ul>
+        <li><strong>Punto di partenza:</strong> Ortona dei Marsi (1050 m s.l.m.), la porta nord del Parco Nazionale d'Abruzzo, Lazio e Molise.</li>
+        <li><strong>Punti di interesse:</strong> la torre medievale del Mastio a Ortona dei Marsi, i vicoli storici del borgo e la natura selvaggia lungo il fiume.</li>
+    </ul>
+</div>
+
+</body>
+</html>
