@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percorsi Mountain Bike - Percorsi ODM</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background-color: #f4f4f4;
+      color: #222;
+      min-height: 100vh;
+    }
+    .home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .home-btn img {
+      width: 70px;
+      height: auto;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .home-btn img:hover {
+      transform: scale(1.05);
+    }
+    .header {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 100px 20px 25px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .header p {
+      margin-top: 10px;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+    .list-wrap {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .route-card {
+      display: block;
+      background: white;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-bottom: 18px;
+      text-decoration: none;
+      color: #222;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .route-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+    .route-card h2 {
+      margin: 0 0 6px;
+      color: #2e7d32;
+      font-size: 1.3rem;
+    }
+    .route-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .home-btn { top: 10px; right: 10px; }
+      .home-btn img { width: 55px; }
+      .header { padding: 90px 15px 20px; }
+      .header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-btn">
+    <img src="Trekking.jpg" alt="Torna alla Home">
+  </a>
+
+  <div class="header">
+    <h1>Percorsi Mountain Bike</h1>
+    <p>Mappe interattive dei sentieri MTB</p>
+  </div>
+
+  <div class="list-wrap">
+    <a href="mappa-anello-faito.html" class="route-card">
+      <h2>Anello Monte Faito</h2>
+      <p>Percorso ad anello tra i sentieri del Monte Faito</p>
+    </a>
+
+    <a href="mappe.html" class="back-link">← Torna alla scelta del tipo di percorso</a>
+  </div>
+</body>
+</html>
