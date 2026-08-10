@@ -146,7 +146,12 @@
     }).addTo(map);
 
     new L.GPX('Anello%20Faito.gpx', {
-        async: true
+        async: true,
+        marker_options: {
+            startIconUrl: '',
+            endIconUrl: '',
+            shadowUrl: ''
+        }
     }).on('loaded', function(e) {
         map.fitBounds(e.target.getBounds());
     }).on('error', function(e) {
