@@ -58,13 +58,28 @@
       box-shadow: 0 10px 40px rgba(0,0,0,0.25);
       border: 3px solid #fff;
     }
-    .status-msg {
+    .info-btn-wrap {
       max-width: 1000px;
-      margin: 0 auto 20px;
+      margin: 25px auto 40px;
       padding: 0 20px;
       text-align: center;
-      color: #b23b3b;
-      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    .info-btn {
+      display: inline-block;
+      padding: 12px 26px;
+      background-color: #2e7d32;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .info-btn:hover {
+      background-color: #256628;
+      transform: translateY(-3px);
     }
     @media (max-width: 768px) {
       .home-btn { top: 10px; right: 10px; }
@@ -72,6 +87,7 @@
       .header { padding: 90px 15px 20px; }
       .header h1 { font-size: 1.5rem; }
       #map { height: 380px; }
+      .info-btn { padding: 10px 20px; font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -89,8 +105,13 @@
     <div id="map"></div>
   </div>
 
+  <div class="info-btn-wrap">
+    <a href="caratteristiche-anello-faito.html" class="info-btn">Caratteristiche ed info tecniche</a>
+  </div>
+
   <script>
-    var map = L.map('map');
+    var map = L.map('map').setView([41.99, 13.735], 13);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
