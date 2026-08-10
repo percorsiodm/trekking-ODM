@@ -35,6 +35,10 @@
       top: 100px;
       right: 20px;
       z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
     }
     .mappe-btn img {
       width: 70px;
@@ -42,9 +46,23 @@
       display: block;
       cursor: pointer;
       transition: transform 0.2s ease;
+      border-radius: 8px;
     }
     .mappe-btn img:hover {
       transform: scale(1.05);
+    }
+    .mappe-btn span {
+      margin-top: 6px;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 0.85rem;
+      color: #2c2416;
+      background: rgba(255,255,255,0.75);
+      padding: 3px 10px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+      text-align: center;
     }
     .header {
       background-color: #2e7d32;
@@ -83,14 +101,6 @@
       padding: 4px 10px;
       border-radius: 6px;
     }
-    .status-msg {
-      max-width: 1000px;
-      margin: 0 auto 20px;
-      padding: 0 20px;
-      text-align: center;
-      color: #b23b3b;
-      font-size: 0.95rem;
-    }
     .info-btn-wrap {
       max-width: 1000px;
       margin: 25px auto 40px;
@@ -119,6 +129,7 @@
       .home-btn img { width: 55px; }
       .mappe-btn { top: 75px; right: 10px; }
       .mappe-btn img { width: 55px; }
+      .mappe-btn span { font-size: 0.7rem; }
       .header { padding: 90px 15px 20px; }
       .header h1 { font-size: 1.5rem; }
       #map { height: 380px; }
@@ -131,7 +142,8 @@
     <img src="Trekking.jpg" alt="Torna alla Home">
   </a>
   <a href="mappe.html" class="mappe-btn">
-    <img src="Torna_Mappe_Interattive.png?v=2" alt="Torna a Mappe Interattive">
+    <img src="Torna_Mappe_Interattive.png" alt="Torna a Mappe Interattive">
+    <span>Torna a Mappe Interattive</span>
   </a>
 
   <div class="header">
