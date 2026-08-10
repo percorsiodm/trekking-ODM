@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mappa Interattiva - Anello Monte Faito</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-gpx@1.7.0/gpx.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+    .home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .home-btn img {
+      width: 70px;
+      height: auto;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .home-btn img:hover {
+      transform: scale(1.05);
+    }
+    .header {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 100px 20px 25px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .header p {
+      margin-top: 10px;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+    .map-wrap {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    #map {
+      height: 500px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+      border: 3px solid #fff;
+    }
+    @media (max-width: 768px) {
+      .home-btn { top: 10px; right: 10px; }
+      .home-btn img { width: 55px; }
+      .header { padding: 90px 15px 20px; }
+      .header h1 { font-size: 1.5rem; }
+      #map { height: 380px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-btn">
+    <img src="Trekking.jpg" alt="Torna alla Home">
+  </a>
+
+  <div class="header">
+    <h1>Mappa Interattiva</h1>
+    <p>Anello Monte Faito</p>
+  </div>
+
+  <div class="map-wrap">
+    <div id="map"></div>
+  </div>
+
+  <script>
+    var map = L.map('map');
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    new L.GPX('Anello%20Faito.gpx', {
+        async: true
+    }).on('loaded', function(e) {
+        map.fitBounds(e.target.getBounds());
+    }).addTo(map);
+  </script>
+</body>
+</html>
