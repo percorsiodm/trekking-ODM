@@ -14,20 +14,24 @@
       background-color: #f4f4f4;
       color: #222;
     }
-    .home-btn {
+    .top-right {
       position: fixed;
       top: 20px;
       right: 20px;
       z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
     }
-    .home-btn img {
+    .top-right img {
       width: 70px;
       height: auto;
       display: block;
       cursor: pointer;
       transition: transform 0.2s ease;
     }
-    .home-btn img:hover {
+    .top-right img:hover {
       transform: scale(1.05);
     }
     .mtb-back-link {
@@ -112,8 +116,8 @@
       transform: translateY(-3px);
     }
     @media (max-width: 768px) {
-      .home-btn { top: 10px; right: 10px; }
-      .home-btn img { width: 55px; }
+      .top-right { top: 10px; right: 10px; gap: 8px; }
+      .top-right img { width: 55px; }
       .mtb-back-link {
         top: 10px;
         left: 10px;
@@ -128,12 +132,19 @@
   </style>
 </head>
 <body>
-  <a href="index.html" class="home-btn">
-    <img src="Trekking.jpg" alt="Torna alla Home">
-  </a>
-  <a href="mappe.html" class="mtb-back-link">
+
+<div class="top-right">
+    <a href="index.html">
+        <img src="Trekking.jpg" alt="Torna alla Home">
+    </a>
+    <a href="Anello%20Faito.gpx" download>
+        <img src="Scarica_GPX.png" alt="Scarica traccia GPX">
+    </a>
+</div>
+
+<a href="mappe.html" class="mtb-back-link">
     🗺️ Altre Mappe da Esplorare
-  </a>
+</a>
 
   <div class="header">
     <h1>Mappa Interattiva</h1>
