@@ -58,6 +58,14 @@
       box-shadow: 0 10px 40px rgba(0,0,0,0.25);
       border: 3px solid #fff;
     }
+    .status-msg {
+      max-width: 1000px;
+      margin: 0 auto 20px;
+      padding: 0 20px;
+      text-align: center;
+      color: #b23b3b;
+      font-size: 0.95rem;
+    }
     @media (max-width: 768px) {
       .home-btn { top: 10px; right: 10px; }
       .home-btn img { width: 55px; }
@@ -91,6 +99,8 @@
         async: true
     }).on('loaded', function(e) {
         map.fitBounds(e.target.getBounds());
+    }).on('error', function(e) {
+        console.error('Errore nel caricamento del GPX:', e);
     }).addTo(map);
   </script>
 </body>
