@@ -37,7 +37,7 @@
       z-index: 1000;
     }
     .mappe-btn img {
-      width: 160px;
+      width: 70px;
       height: auto;
       display: block;
       cursor: pointer;
@@ -74,6 +74,15 @@
       box-shadow: 0 10px 40px rgba(0,0,0,0.25);
       border: 3px solid #fff;
     }
+    .start-end-tooltip {
+      background: #2e7d32;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
     .status-msg {
       max-width: 1000px;
       margin: 0 auto 20px;
@@ -109,7 +118,7 @@
       .home-btn { top: 10px; right: 10px; }
       .home-btn img { width: 55px; }
       .mappe-btn { top: 75px; right: 10px; }
-      .mappe-btn img { width: 120px; }
+      .mappe-btn img { width: 55px; }
       .header { padding: 90px 15px 20px; }
       .header h1 { font-size: 1.5rem; }
       #map { height: 380px; }
@@ -122,7 +131,7 @@
     <img src="Trekking.jpg" alt="Torna alla Home">
   </a>
   <a href="mappe.html" class="mappe-btn">
-    <img src="Torna_Mappe_Interattive.png" alt="Torna a Mappe Interattive">
+    <img src="Torna_Mappe_Interattive.png?v=2" alt="Torna a Mappe Interattive">
   </a>
 
   <div class="header">
@@ -157,6 +166,29 @@
     }).on('error', function(e) {
         console.error('Errore nel caricamento del GPX:', e);
     }).addTo(map);
+
+    // Marker Partenza/Arrivo (percorso ad anello: stesso punto)
+    fetch('Anello%20Faito.gpx')
+        .then(r => r.text())
+        .then(str => {
+            var xml = new DOMParser().parseFromString(str, 'application/xml');
+            var pts = xml.getElementsByTagName('trkpt');
+            if (pts.length > 0) {
+                var first = pts[0];
+                var startLatLng = [parseFloat(first.getAttribute('lat')), parseFloat(first.getAttribute('lon'))];
+                L.circleMarker(startLatLng, {
+                    radius: 9,
+                    color: '#fff',
+                    weight: 2,
+                    fillColor: '#2e7d32',
+                    fillOpacity: 1
+                }).addTo(map).bindTooltip('Partenza e Arrivo', {
+                    permanent: true,
+                    direction: 'top',
+                    className: 'start-end-tooltip'
+                });
+            }
+        });
   </script>
 </body>
 </html>
