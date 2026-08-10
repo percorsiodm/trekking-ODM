@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percorsi Trekking - Percorsi ODM</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background-color: #f4f4f4;
+      color: #222;
+      min-height: 100vh;
+    }
+    .home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .home-btn img {
+      width: 70px;
+      height: auto;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .home-btn img:hover {
+      transform: scale(1.05);
+    }
+    .header {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 100px 20px 25px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .header p {
+      margin-top: 10px;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+    .list-wrap {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .empty-msg {
+      background: white;
+      border-radius: 12px;
+      padding: 30px 25px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      color: #555;
+      font-style: italic;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .home-btn { top: 10px; right: 10px; }
+      .home-btn img { width: 55px; }
+      .header { padding: 90px 15px 20px; }
+      .header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-btn">
+    <img src="Trekking.jpg" alt="Torna alla Home">
+  </a>
+
+  <div class="header">
+    <h1>Percorsi Trekking</h1>
+    <p>Mappe interattive dei sentieri escursionistici</p>
+  </div>
+
+  <div class="list-wrap">
+    <div class="empty-msg">
+      🌿 Al momento non ci sono ancora mappe interattive per i percorsi trekking, presto disponibili.
+    </div>
+    <a href="mappe.html" class="back-link">← Torna alla scelta del tipo di percorso</a>
+  </div>
+</body>
+</html>
