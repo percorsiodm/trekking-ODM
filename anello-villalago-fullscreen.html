@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mappa Interattiva - Anello di Villalago</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-gpx@1.7.0/gpx.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+    .back-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1000;
+      display: inline-block;
+      background-color: #2e7d32;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      padding: 10px 16px;
+      border-radius: 30px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+      transition: background-color 0.3s ease;
+    }
+    .back-btn:hover {
+      background-color: #256628;
+    }
+    .start-end-tooltip {
+      background: #2e7d32;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    @media (max-width: 768px) {
+      .back-btn {
+        top: 10px;
+        left: 10px;
+        font-size: 0.8rem;
+        padding: 8px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a href="anello-villalago.html" class="back-btn">← Indietro</a>
+
+<div id="map"></div>
+
+<script>
+    var map = L.map('map').setView([42.01, 13.73], 12);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    new L.GPX('Anello_Villalago.gpx', {
+        async: true,
+        marker_options: {
+            startIconUrl: '',
+            endIconUrl: '',
+            shadowUrl: ''
+        }
+    }).on('loaded', function(e) {
+        map.fitBounds(e.target.getBounds());
+    }).on('error', function(e) {
+        console.error('Errore nel caricamento del GPX:', e);
+    }).addTo(map);
+
+    fetch('Anello_Villalago.gpx')
+        .then(r => r.text())
+        .then(str => {
+            var xml = new DOMParser().parseFromString(str, 'application/xml');
+            var pts = xml.getElementsByTagName('trkpt');
+            if (pts.length > 0) {
+                var first = pts[0];
+                var startLatLng = [parseFloat(first.getAttribute('lat')), parseFloat(first.getAttribute('lon'))];
+                L.circleMarker(startLatLng, {
+                    radius: 9,
+                    color: '#fff',
+                    weight: 2,
+                    fillColor: '#2e7d32',
+                    fillOpacity: 1
+                }).addTo(map).bindTooltip('Partenza e Arrivo', {
+                    permanent: true,
+                    direction: 'top',
+                    className: 'start-end-tooltip'
+                });
+            }
+        });
+</script>
+</body>
+</html>
