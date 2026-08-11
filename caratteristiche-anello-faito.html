@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caratteristiche ed Info Tecniche - Anello Monte Faito</title>
+  <title>Scheda Tecnica - Anello Monte Faito</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background-color: #f4f4f4;
-      color: #222;
       min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      background-image: linear-gradient(rgba(20,30,15,0.4), rgba(20,30,15,0.6)), url('Monte%20Faito.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #f5f2e8;
     }
     .home-btn {
       position: fixed;
@@ -29,38 +34,42 @@
       transform: scale(1.05);
     }
     .header {
-      background-color: #2e7d32;
-      color: white;
       text-align: center;
       padding: 100px 20px 25px;
     }
     .header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     }
     .header p {
       margin-top: 10px;
       font-size: 1.05rem;
       opacity: 0.95;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
     }
     .content-wrap {
       max-width: 750px;
-      margin: 30px auto;
-      padding: 0 20px 40px;
+      margin: 0 auto;
+      padding: 0 20px 50px;
       box-sizing: border-box;
     }
     .content-box {
-      background: white;
-      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(173, 216, 230, 0.8);
+      border-radius: 20px;
       padding: 30px 35px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
       line-height: 1.7;
     }
     .content-box p { margin: 0 0 16px; }
     .content-box h2 {
-      color: #2e7d32;
+      color: #fff;
       font-size: 1.5rem;
       margin: 25px 0 12px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     }
     .content-box ul {
       padding-left: 20px;
@@ -70,20 +79,34 @@
       margin-bottom: 8px;
     }
     .content-box li strong {
-      color: #2e7d32;
+      color: #d8e8c8;
+    }
+    .note-box {
+      background: rgba(0,0,0,0.25);
+      border-left: 3px solid rgba(173, 216, 230, 0.9);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 10px;
+      font-size: 0.92rem;
+      opacity: 0.95;
     }
     .back-link {
       display: inline-block;
-      margin-top: 15px;
-      color: #2e7d32;
+      margin-top: 20px;
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .back-link:hover {
+      text-decoration: underline;
     }
     @media (max-width: 768px) {
+      body { background-attachment: scroll; }
       .home-btn { top: 10px; right: 10px; }
       .home-btn img { width: 55px; }
       .header { padding: 90px 15px 20px; }
-      .header h1 { font-size: 1.5rem; }
+      .header h1 { font-size: 1.6rem; }
       .content-box { padding: 22px 20px; }
     }
   </style>
@@ -94,20 +117,21 @@
   </a>
 
   <div class="header">
-    <h1>Caratteristiche ed Info Tecniche</h1>
+    <h1>Scheda Tecnica</h1>
     <p>Anello Monte Faito</p>
   </div>
 
   <div class="content-wrap">
     <div class="content-box">
-      <p>Il percorso ad anello del Monte Faito (1.459 m) in Abruzzo, nella Marsica con vista sulla piana del Fucino, parte solitamente da Pescina. È un itinerario MTB lungo circa 38 km con un dislivello positivo di circa 1.030 metri, classificato come difficile per la salita e i tratti tecnici su breccia e sterrato.</p>
+      <p>Il percorso ad anello del Monte Faito (1.459 m) in Abruzzo, nella Marsica con vista sulla piana del Fucino, parte solitamente da Pescina. È un itinerario MTB con un dislivello positivo significativo, classificato come difficile per la salita e i tratti tecnici su breccia e sterrato.</p>
 
       <h2>Dettagli del Percorso</h2>
       <ul>
         <li><strong>Partenza e arrivo:</strong> Pescina (AQ)</li>
-        <li><strong>Distanza:</strong> ~38 km</li>
-        <li><strong>Dislivello positivo:</strong> ~1.030 m</li>
-        <li><strong>Quota massima:</strong> 1.459 m (Cima Monte Faito)</li>
+        <li><strong>Distanza:</strong> ~38 km (fonte originale) / ~31 km (calcolata dal tracciato GPX)</li>
+        <li><strong>Dislivello positivo:</strong> ~1.030–1.230 m</li>
+        <li><strong>Quota massima:</strong> 1.454–1.459 m (Cima Monte Faito)</li>
+        <li><strong>Quota minima:</strong> 770 m</li>
         <li><strong>Difficoltà:</strong> Difficile / Impegnativo</li>
         <li><strong>Punti di interesse sul tracciato:</strong> Salita verso il Monte Faito, Monumento dell'Alpino e la Panchina Gigante</li>
       </ul>
@@ -118,7 +142,12 @@
         <li><strong>Periodo ideale:</strong> Dalla tarda primavera all'autunno inoltrato (evitare in presenza di neve o fango pesante)</li>
       </ul>
 
-      <a href="mappa-anello-faito.html" class="back-link">← Torna alla mappa interattiva</a>
+      <h2>Nota sul tracciato GPX</h2>
+      <div class="note-box">
+        Dall'analisi diretta del file GPX: il punto più alto del percorso si trova a circa il 35% del tracciato, in corrispondenza della cima del Monte Faito. La distanza calcolata punto-per-punto dalle coordinate GPS è di circa 31 km, leggermente inferiore ai 38 km riportati dalla fonte originale — una differenza comune tra tracciati GPS diversi dello stesso percorso. Non è stato possibile verificare con certezza i nomi dei singoli borghi/frazioni attraversati lungo il tragitto.
+      </div>
+
+      <a href="mappa-anello-faito.html" class="back-link">← Torna all'Anello Monte Faito</a>
     </div>
   </div>
 </body>
