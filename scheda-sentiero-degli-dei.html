@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheda Tecnica - Sentiero degli Dei</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      background-image: linear-gradient(rgba(20,30,15,0.4), rgba(20,30,15,0.6)), url('Viadeglidei.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #f5f2e8;
+    }
+    .home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .home-btn img {
+      width: 70px;
+      height: auto;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .home-btn img:hover {
+      transform: scale(1.05);
+    }
+    .header {
+      text-align: center;
+      padding: 100px 20px 25px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2.1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+    .header p {
+      margin-top: 10px;
+      font-size: 1.05rem;
+      opacity: 0.95;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    }
+    .content-wrap {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 0 20px 50px;
+      box-sizing: border-box;
+    }
+    .content-box {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(173, 216, 230, 0.8);
+      border-radius: 20px;
+      padding: 30px 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      line-height: 1.7;
+    }
+    .content-box p { margin: 0 0 16px; }
+    .content-box h2 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 25px 0 12px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    .content-box ul {
+      padding-left: 20px;
+      margin: 0 0 10px;
+    }
+    .content-box li {
+      margin-bottom: 8px;
+    }
+    .content-box li strong {
+      color: #d8e8c8;
+    }
+    .content-box a { color: #d8e8c8; }
+    .note-box {
+      background: rgba(0,0,0,0.25);
+      border-left: 3px solid rgba(173, 216, 230, 0.9);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 10px;
+      font-size: 0.92rem;
+      opacity: 0.95;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      body { background-attachment: scroll; }
+      .home-btn { top: 10px; right: 10px; }
+      .home-btn img { width: 55px; }
+      .header { padding: 90px 15px 20px; }
+      .header h1 { font-size: 1.6rem; }
+      .content-box { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-btn">
+    <img src="Trekking.jpg" alt="Torna alla Home">
+  </a>
+
+  <div class="header">
+    <h1>Scheda Tecnica</h1>
+    <p>Sentiero degli Dei</p>
+  </div>
+
+  <div class="content-wrap">
+    <div class="content-box">
+      <p>La Via degli Dei è un famoso cammino di circa 130 km che unisce <a href="https://www.viadeglidei.it/" target="_blank" rel="noopener">Bologna a Firenze</a> attraverso l'Appennino, prendendo il nome <a href="https://camminiditalia.org/perche-si-chiama-via-degli-dei/" target="_blank" rel="noopener">da monti dedicati a divinità pagane</a> (come Monte Adone e Monte Venere).</p>
+
+      <h2>Dettagli del Percorso</h2>
+      <ul>
+        <li><strong>Partenza:</strong> Bologna</li>
+        <li><strong>Arrivo:</strong> Firenze</li>
+        <li><strong>Distanza:</strong> ~130 km (fonte originale) / 128,7 km (calcolata dal tracciato GPX)</li>
+        <li><strong>Dislivello e quota massima:</strong> dato non disponibile — il file GPX non contiene informazioni di elevazione</li>
+      </ul>
+
+      <h2>Le Origini Antiche</h2>
+      <ul>
+        <li><strong>Gli Etruschi:</strong> già nel V-IV secolo a.C., le popolazioni etrusche usavano questi crinali montani per collegare Padania ed Etruria per motivi commerciali.</li>
+        <li><strong>La Flaminia Militare:</strong> nel 187 a.C., il console romano Caio Flaminio fece costruire una strada militare lastricata in pietra (basolato) per unire Roma a Bononia (Bologna) in modo rapido. Tratti di questo antico selciato romano affiorano ancora oggi lungo il percorso.</li>
+      </ul>
+
+      <h2>La Riscoperta Moderna</h2>
+      <ul>
+        <li><strong>Anni '80-'90:</strong> il tracciato è stato riscoperto e rilanciato da un gruppo di escursionisti bolognesi guidati da Domenico Manaresi (detto "Mingàn").</li>
+        <li><strong>Il nome:</strong> ripresero la denominazione popolare della strada provinciale che attraversava i monti sacri agli dei romani, trasformandola in uno dei primi e più amati percorsi di trekking storico-naturalistico d'Italia.</li>
+      </ul>
+
+      <h2>Nota sul tracciato GPX</h2>
+      <div class="note-box">
+        La distanza calcolata punto-per-punto dalle coordinate GPS del file GPX è di 128,7 km, molto vicina ai "circa 130 km" della fonte originale. Il file non include però dati di elevazione, quindi non è possibile riportare qui dislivello o quota massima reali.
+      </div>
+
+      <a href="sentiero-degli-dei.html" class="back-link">← Torna al Sentiero degli Dei</a>
+    </div>
+  </div>
+</body>
+</html>
