@@ -53,23 +53,41 @@
       margin: 0 auto;
       padding: 0 20px 50px;
       box-sizing: border-box;
-      text-align: center;
     }
-    .empty-msg {
+    .route-card {
+      display: block;
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       border: 1.5px solid rgba(173, 216, 230, 0.8);
       border-radius: 16px;
-      padding: 30px 25px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      padding: 20px 25px;
+      margin-bottom: 18px;
+      text-decoration: none;
       color: #fff;
-      font-style: italic;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.3s ease;
+    }
+    .route-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(173, 216, 230, 1);
+    }
+    .route-card h2 {
+      margin: 0 0 6px;
+      color: #fff;
+      font-size: 1.3rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .route-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     }
     .back-link {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 10px;
       color: #fff;
       text-decoration: none;
       font-weight: bold;
@@ -98,9 +116,11 @@
   </div>
 
   <div class="list-wrap">
-    <div class="empty-msg">
-      🌿 Al momento non ci sono ancora mappe interattive per i percorsi trekking, presto disponibili.
-    </div>
+    <a href="sentiero-degli-dei.html" class="route-card">
+      <h2>Sentiero degli Dei</h2>
+      <p>130 km tra Bologna e Firenze, lungo l'antico crinale appenninico</p>
+    </a>
+
     <a href="mappe.html" class="back-link">← Torna alla scelta del tipo di percorso</a>
   </div>
 </body>
