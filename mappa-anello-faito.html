@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mappa Interattiva - Anello Monte Faito</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet-gpx@1.7.0/gpx.js"></script>
+  <title>Anello Monte Faito - Percorsi ODM</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -19,7 +16,11 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       color: #f5f2e8;
-      padding: 190px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
     }
     .top-right {
       position: fixed;
@@ -62,68 +63,50 @@
       background-color: #256628;
       transform: translateY(-2px);
     }
-    .header {
+    h1 {
       text-align: center;
-      margin-bottom: 30px;
-    }
-    .header h1 {
-      margin: 0;
       font-size: 2.4rem;
+      margin: 0 0 8px;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     }
-    .header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
+    .subtitle {
+      text-align: center;
+      font-size: 1.05rem;
       opacity: 0.95;
+      margin: 0 0 40px;
       text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
     }
-    .map-wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-    #map {
-      height: 500px;
+    .menu-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
       width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-      border: 3px solid #fff;
+      max-width: 380px;
     }
-    .start-end-tooltip {
-      background: #2e7d32;
-      color: #fff;
-      border: none;
-      font-weight: bold;
-      font-size: 0.85rem;
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-    .info-btn-wrap {
-      max-width: 1000px;
-      margin: 25px auto 0;
-      padding: 0 20px;
-      text-align: center;
-      box-sizing: border-box;
-    }
-    .info-btn {
-      display: inline-block;
-      padding: 12px 26px;
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       background-color: #2e7d32;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
       font-weight: bold;
-      font-size: 1rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      font-size: 1.1rem;
+      padding: 16px 26px;
+      border-radius: 50px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
-    .info-btn:hover {
+    .menu-btn:hover {
       background-color: #256628;
       transform: translateY(-3px);
     }
+    .menu-btn .icon {
+      font-size: 1.3rem;
+    }
     @media (max-width: 768px) {
-      body { background-attachment: scroll; padding: 160px 15px 50px; }
+      body { background-attachment: scroll; padding: 30px 15px; }
       .top-right { top: 10px; right: 10px; gap: 8px; }
       .top-right img { width: 55px; }
       .mtb-back-link {
@@ -132,10 +115,9 @@
         font-size: 0.8rem;
         padding: 8px 14px;
       }
-      .header h1 { font-size: 1.8rem; }
-      .header p { font-size: 0.95rem; }
-      #map { height: 380px; }
-      .info-btn { padding: 10px 20px; font-size: 0.9rem; }
+      h1 { font-size: 1.9rem; }
+      .subtitle { font-size: 0.95rem; }
+      .menu-btn { font-size: 1rem; padding: 14px 20px; }
     }
   </style>
 </head>
@@ -154,60 +136,20 @@
     🗺️ Altre Mappe da Esplorare
 </a>
 
-<div class="header">
-    <h1>Mappa Interattiva</h1>
-    <p>Anello Monte Faito</p>
+<h1>Anello Monte Faito</h1>
+<p class="subtitle">Percorso ad anello in Mountain Bike, Marsica (AQ)</p>
+
+<div class="menu-btns">
+    <a href="mappa-anello-faito-fullscreen.html" class="menu-btn">
+        <span class="icon">🗺️</span> Mappa Interattiva
+    </a>
+    <a href="caratteristiche-anello-faito.html" class="menu-btn">
+        <span class="icon">📋</span> Caratteristiche ed Info Tecniche
+    </a>
+    <a href="gallery-anello-faito.html" class="menu-btn">
+        <span class="icon">📷</span> Gallery
+    </a>
 </div>
 
-<div class="map-wrap">
-    <div id="map"></div>
-</div>
-
-<div class="info-btn-wrap">
-    <a href="caratteristiche-anello-faito.html" class="info-btn">Caratteristiche ed info tecniche</a>
-</div>
-
-<script>
-    var map = L.map('map').setView([41.99, 13.735], 13);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    new L.GPX('Anello%20Faito.gpx', {
-        async: true,
-        marker_options: {
-            startIconUrl: '',
-            endIconUrl: '',
-            shadowUrl: ''
-        }
-    }).on('loaded', function(e) {
-        map.fitBounds(e.target.getBounds());
-    }).on('error', function(e) {
-        console.error('Errore nel caricamento del GPX:', e);
-    }).addTo(map);
-
-    fetch('Anello%20Faito.gpx')
-        .then(r => r.text())
-        .then(str => {
-            var xml = new DOMParser().parseFromString(str, 'application/xml');
-            var pts = xml.getElementsByTagName('trkpt');
-            if (pts.length > 0) {
-                var first = pts[0];
-                var startLatLng = [parseFloat(first.getAttribute('lat')), parseFloat(first.getAttribute('lon'))];
-                L.circleMarker(startLatLng, {
-                    radius: 9,
-                    color: '#fff',
-                    weight: 2,
-                    fillColor: '#2e7d32',
-                    fillOpacity: 1
-                }).addTo(map).bindTooltip('Partenza e Arrivo', {
-                    permanent: true,
-                    direction: 'top',
-                    className: 'start-end-tooltip'
-                });
-            }
-        });
-</script>
 </body>
 </html>
