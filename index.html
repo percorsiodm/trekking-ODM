@@ -5,145 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Percorsi ODM</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
+      min-height: 100vh;
       font-family: Georgia, "Times New Roman", serif;
-      background-color: #f4f4f4;
-      color: #222;
-    }
-    .hero {
-      position: relative;
-      height: 100vh;
-      background-image: url('Ortona_1.jpeg');
+      background-image: linear-gradient(rgba(20,30,15,0.35), rgba(20,30,15,0.6)), url('Ortona_1.jpeg');
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #f5f2e8;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 60px 20px;
     }
-    .overlay {
-      background: rgba(0, 0, 0, 0.45);
-      color: white;
-      text-align: left;
-      padding: 30px 40px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .overlay h1 {
-      font-size: 2rem;
-      line-height: 1.4;
-      margin: 0;
+    .content-wrap {
       max-width: 700px;
+      width: 100%;
+      text-align: center;
     }
-    .overlay p {
-      margin-top: 15px;
-      font-size: 1.1rem;
-      max-width: 600px;
+    h1 {
+      font-size: 2.6rem;
+      line-height: 1.3;
+      margin: 0 0 20px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+    }
+    .story {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin: 0 0 35px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+      opacity: 0.97;
     }
     .btn-group {
       display: flex;
-      justify-content: flex-start;
-      gap: 12px;
+      justify-content: center;
+      gap: 18px;
       flex-wrap: wrap;
-      margin-top: 20px;
     }
     .btn {
-      display: inline-block;
-      padding: 8px 16px;
-      background-color: #2e7d32;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(173, 216, 230, 0.8);
       font-weight: bold;
-      font-size: 0.85rem;
-      transition: background-color 0.3s ease;
+      font-size: 1rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
     }
     .btn:hover {
-      background-color: #256628;
-    }
-    .section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      background: white;
-      box-sizing: border-box;
-    }
-    .section h2 {
-      color: #2e7d32;
-      margin-top: 0;
-      margin-bottom: 25px;
-      text-align: center;
-      font-size: 2rem;
-    }
-    .section p {
-      line-height: 1.8;
-      font-size: 1.08rem;
-      margin-bottom: 18px;
-    }
-    .storia {
-      margin-top: 20px;
-      text-align: left;
-    }
-    .storia strong {
-      color: #2e7d32;
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(173, 216, 230, 1);
+      transform: translateY(-3px);
     }
     @media (max-width: 768px) {
-      .hero {
-        height: 80vh;
-      }
-      .overlay {
-        padding: 25px 20px;
-      }
-      .overlay h1 {
-        font-size: 1.6rem;
-      }
-      .overlay p {
-        font-size: 1rem;
-      }
-      .btn {
-        font-size: 0.8rem;
-        padding: 7px 14px;
-      }
-      .section h2 {
-        font-size: 1.6rem;
-      }
-      .section p {
-        font-size: 1rem;
-      }
+      body { background-attachment: scroll; padding: 40px 20px; }
+      h1 { font-size: 1.9rem; }
+      .story { font-size: 1rem; }
+      .btn { font-size: 0.9rem; padding: 12px 22px; }
     }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="overlay">
-      <h1>In cammino verso le meraviglie di Ortona dei Marsi e dintorni</h1>
-      <p>Scopri sentieri, natura e paesaggi del territorio direttamente dal tuo smartphone.</p>
-      <div class="btn-group">
-        <a class="btn" href="mappe.html">Vivi il Territorio</a>
-        <a class="btn" href="eventi.html">Scopri gli eventi</a>
-      </div>
+  <div class="content-wrap">
+    <h1>Natura, silenzio, sentieri: il tuo cammino inizia qui</h1>
+    <p class="story">
+      C'è un territorio che aspetta solo di essere scoperto: sentieri che si perdono tra i boschi, borghi che custodiscono storie antiche, montagne che cambiano volto ad ogni stagione. Qui ogni percorso è un invito e ogni evento un'occasione per viverlo insieme agli altri. Scegli come iniziare — esplora i sentieri a piedi o in bici, oppure scopri cosa c'è in programma — e lasciati sorprendere da quello che troverai.
+    </p>
+    <div class="btn-group">
+      <a class="btn" href="mappe.html">🥾 Vivi il Territorio</a>
+      <a class="btn" href="eventi.html">📅 Scopri gli Eventi</a>
     </div>
-  </section>
-  <section class="section">
-    <h2>Natura, silenzio, sentieri: il tuo cammino inizia qui</h2>
-    <div class="storia">
-      <p>
-        Ortona dei Marsi e' circondata da cime appenniniche come il Monte Parasano, il Monte Argatone e il Monte Terratta, inserite nel contesto della Valle del Giovenco e del Parco Nazionale d'Abruzzo, Lazio e Molise.
-      </p>
-      <p>
-        <strong>Rilievi principali</strong><br>
-        Monte Parasano: sorge subito a ridosso del borgo a circa 1.450 metri, dominando l'abitato.<br>
-        Monte Argatone e Monte Terratta: situati a sud del territorio comunale, superano i 2.000 metri di quota.<br>
-        Montagna Grande: catena montuosa che delimita la valle verso Pescasseroli.<br>
-        Monte Pietra Gentile: situato nei pressi di Bisegna, tocca i 1.985 metri ed e' la zona d'origine del fiume Giovenco.
-      </p>
-      <p>
-        <strong>Caratteristiche del territorio</strong><br>
-        Altitudine del paese: circa 1.003 metri s.l.m. nella valle.<br>
-        Altimetria circostante: i rilievi minori superano i 1.700 metri, mentre le vette maggiori a sud arrivano oltre i 2.000 metri.<br>
-        Idrografia: il territorio e' solcato dal fiume Giovenco, che nasce dalle vicine pendici montane.
-      </p>
-    </div>
-  </section>
+  </div>
 </body>
 </html>
