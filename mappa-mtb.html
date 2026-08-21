@@ -87,13 +87,23 @@
       font-weight: bold;
       text-decoration: none;
       padding: 5px 0;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     .popup-route-list a:last-child {
       border-bottom: none;
     }
     .popup-route-list a:hover {
       text-decoration: underline;
+    }
+    .leaflet-popup-content-wrapper {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .leaflet-popup-tip {
+      background: rgba(255, 255, 255, 0.85);
     }
     @media (max-width: 768px) {
       .top-bar h1 { font-size: 1.2rem; }
@@ -116,14 +126,12 @@
 <div id="map"></div>
 
 <script>
-    // Mappa d'Italia, vista iniziale zoomata su tutto il paese
     var map = L.map('map').setView([42.3, 12.6], 6);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Marker sulla zona di Ortona dei Marsi / Marsica, con popup che elenca tutti i percorsi
     var marsicaMarker = L.marker([41.985, 13.730]).addTo(map);
 
     var popupContent = `
@@ -141,7 +149,6 @@
 
     marsicaMarker.bindPopup(popupContent).openPopup();
 
-    // Dopo un breve zoom automatico verso la Marsica per dare contesto geografico
     setTimeout(function() {
         map.flyTo([41.985, 13.730], 11, { duration: 2 });
     }, 1200);
