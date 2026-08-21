@@ -106,6 +106,33 @@
     .custom-pin {
       filter: drop-shadow(0 3px 4px rgba(0,0,0,0.4));
     }
+    .pulse-ring {
+      display: block;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(46, 125, 50, 0.5);
+      animation: pulse-anim 1.8s ease-out infinite;
+    }
+    @keyframes pulse-anim {
+      0% { transform: scale(0.6); opacity: 0.8; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .hint-tooltip {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      color: #2c2416;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 8px 14px;
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+    .hint-tooltip::before {
+      border-right-color: rgba(255, 255, 255, 0.9);
+    }
     @media (max-width: 768px) {
       .top-bar h1 { font-size: 1.2rem; }
       .top-bar p { font-size: 0.8rem; }
@@ -132,6 +159,15 @@
         maxZoom: 20
     }).addTo(map);
 
+    // Anello pulsante dietro al marker, per farlo notare
+    var pulseIcon = L.divIcon({
+        html: '<span class="pulse-ring"></span>',
+        className: '',
+        iconSize: [36, 36],
+        iconAnchor: [18, 18]
+    });
+    L.marker([41.985, 13.730], { icon: pulseIcon, interactive: false, zIndexOffset: -10 }).addTo(map);
+
     var pinSvg = `
         <svg width="36" height="48" viewBox="0 0 36 48" xmlns="http://www.w3.org/2000/svg" class="custom-pin">
             <path d="M18 0C8 0 0 8 0 18c0 13 18 30 18 30s18-17 18-30C36 8 28 0 18 0z" fill="#2e7d32"/>
@@ -150,10 +186,19 @@
 
     var marsicaMarker = L.marker([41.985, 13.730], { icon: customIcon }).addTo(map);
 
+    // Suggerimento sempre visibile finché non si clicca
+    marsicaMarker.bindTooltip('👉 Tocca qui per vedere i percorsi', {
+        permanent: true,
+        direction: 'right',
+        offset: [10, -30],
+        className: 'hint-tooltip'
+    });
+
     var popupContent = `
         <div style="min-width: 210px;">
             <div class="popup-title">🚵 Marsica - Ortona dei Marsi</div>
-            <div class="popup-route-list" style="margin-top: 6px;">
+            <p style="font-family:'Quicksand', sans-serif; font-size:0.85rem; color:#555; margin: 4px 0 8px;">Scegli uno dei percorsi in mountain bike disponibili in questa zona:</p>
+            <div class="popup-route-list">
                 <a href="mappa-anello-faito.html">Anello Monte Faito</a>
                 <a href="anello-villalago.html">Anello di Villalago</a>
                 <a href="milonia.html">Milonia</a>
@@ -163,7 +208,12 @@
         </div>
     `;
 
-    marsicaMarker.bindPopup(popupContent).openPopup();
+    marsicaMarker.bindPopup(popupContent);
+
+    // Al click sul marker, il suggerimento sparisce (non serve più)
+    marsicaMarker.on('click', function() {
+        marsicaMarker.unbindTooltip();
+    });
 
     setTimeout(function() {
         map.flyTo([41.985, 13.730], 11, { duration: 2 });
