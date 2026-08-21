@@ -159,7 +159,6 @@
         maxZoom: 20
     }).addTo(map);
 
-    // Anello pulsante dietro al marker, per farlo notare
     var pulseIcon = L.divIcon({
         html: '<span class="pulse-ring"></span>',
         className: '',
@@ -181,12 +180,11 @@
         className: '',
         iconSize: [36, 48],
         iconAnchor: [18, 48],
-        popupAnchor: [0, -44]
+        popupAnchor: [130, -20]
     });
 
     var marsicaMarker = L.marker([41.985, 13.730], { icon: customIcon }).addTo(map);
 
-    // Suggerimento sempre visibile finché non si clicca
     marsicaMarker.bindTooltip('👈 Tocca qui per vedere i percorsi', {
         permanent: true,
         direction: 'right',
@@ -208,9 +206,12 @@
         </div>
     `;
 
-    marsicaMarker.bindPopup(popupContent);
+    marsicaMarker.bindPopup(popupContent, {
+        autoPan: true,
+        autoPanPaddingTopLeft: L.point(20, 90),
+        autoPanPaddingBottomRight: L.point(20, 20)
+    });
 
-    // Al click sul marker, il suggerimento sparisce (non serve più)
     marsicaMarker.on('click', function() {
         marsicaMarker.unbindTooltip();
     });
