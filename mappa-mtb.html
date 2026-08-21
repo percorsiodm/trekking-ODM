@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Percorsi Mountain Bike - Percorsi ODM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
@@ -68,29 +69,39 @@
       background: rgba(255, 255, 255, 0.25);
       border-color: rgba(173, 216, 230, 1);
     }
+    .popup-title {
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #333;
+    }
     .popup-route-list a {
       display: block;
-      color: #2e7d32;
-      font-weight: bold;
+      font-family: 'Caveat', cursive;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #333;
       text-decoration: none;
-      padding: 5px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(51,51,51,0.15);
     }
     .popup-route-list a:last-child {
       border-bottom: none;
     }
     .popup-route-list a:hover {
-      text-decoration: underline;
+      color: #2e7d32;
     }
     .leaflet-popup-content-wrapper {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 14px;
+      border: 1.5px solid rgba(173, 216, 230, 0.8);
       box-shadow: 0 8px 24px rgba(0,0,0,0.3);
     }
     .leaflet-popup-tip {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.18);
+      border: 1.5px solid rgba(173, 216, 230, 0.8);
     }
     .custom-pin {
       filter: drop-shadow(0 3px 4px rgba(0,0,0,0.4));
@@ -140,9 +151,9 @@
     var marsicaMarker = L.marker([41.985, 13.730], { icon: customIcon }).addTo(map);
 
     var popupContent = `
-        <div style="font-family: Georgia, serif; min-width: 200px;">
-            <strong style="font-size: 1.05rem; color: #2e7d32;">Marsica - Ortona dei Marsi (AQ)</strong>
-            <div class="popup-route-list" style="margin-top: 8px;">
+        <div style="min-width: 210px;">
+            <div class="popup-title">🚵 Marsica - Ortona dei Marsi</div>
+            <div class="popup-route-list" style="margin-top: 6px;">
                 <a href="mappa-anello-faito.html">Anello Monte Faito</a>
                 <a href="anello-villalago.html">Anello di Villalago</a>
                 <a href="milonia.html">Milonia</a>
